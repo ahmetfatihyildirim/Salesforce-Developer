@@ -1,0 +1,32 @@
+trigger OpportunityTrigger on Opportunity (before update) {
+
+//This Trigger for not to select the stage which is on the back.
+    
+    List<String> stageList  = New List<String>{
+    'Prospecting','Qualification','Needs Analysis','Value Proposition',
+    'Id. Decision Makers','Perception Analysis','Proposal/Price Quote',
+    'Negotiation/Review','Closed Won','Closed Lost'
+};
+    
+    Map<Id,Opportunity> oldMap = trigger.oldMap;
+    
+    for(Opportunity op:trigger.new){
+        
+        Integer oldindex = stageList.indexOf(oldMap.get(op.id).stageName);
+        Integer newindex = stageList.indexOf(op.stageName);
+        
+        System.debug('Opportunity Stage Old Value : '+ oldMap.get(op.id).stageName);      // trigger.oldMap
+        
+        System.debug('Opportunity Stage Old index : '+ oldindex);      // trigger.oldMap
+        
+        system.debug('Opportunity Stage new : ' + op.stageName);
+        
+        system.debug('Opportunity Stage  New Index : ' + newindex);
+        
+        // prevent opportunity stage back
+        
+        if(newindex<oldindex){
+            op.stageName.addError('You are not authorized to come back opportunity Stage');
+        }
+    }
+}
