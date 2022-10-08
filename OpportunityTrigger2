@@ -1,0 +1,58 @@
+trigger OpportunityTrigger on Opportunity (before update) {
+    
+    switch on Trigger.operationType {
+    when BEFORE_INSERT {}
+    when AFTER_INSERT {}
+    when BEFORE_UPDATE {
+        
+        OpportunityTriggerHelper trigHelper = New OpportunityTriggerHelper();
+        
+        trigHelper.preventStageBack(Trigger.oldMap, Trigger.new);
+         
+    }
+    when AFTER_UPDATE {}
+    when BEFORE_DELETE {}
+    when AFTER_DELETE {}
+    when AFTER_UNDELETE {}
+}
+  
+}
+//-------------------------HELPER---------------------------
+
+public class OpportunityTriggerHelper {
+    
+    public void preventStageBack(Map<Id,Opportunity> oldMap, List<Opportunity> triggerNew){
+        
+        
+        List<String> stageList  = New List<String>{
+            'Prospecting','Qualification','Needs Analysis','Value Proposition',
+                'Id. Decision Makers','Perception Analysis','Proposal/Price Quote',
+                'Negotiation/Review','Closed Won','Closed Lost'
+                };
+                    
+                    
+                    for(Opportunity op:triggerNew){
+                        
+                        Integer oldindex = stageList.indexOf(oldMap.get(op.id).stageName);
+                        Integer newindex = stageList.indexOf(op.stageName);
+                        
+                        
+                        System.debug('Opportunity Stage Old Value : '+ oldMap.get(op.id).stageName);      // trigger.oldMap
+                        
+                        System.debug('Opportunity Stage Old index : '+ oldindex);      // trigger.oldMap
+                        
+                        
+                        system.debug('Opportunity Stage new : ' + op.stageName);
+                        system.debug('Opportunity Stage  New Index : ' + newindex);
+                        
+                        // prevent opportunity stage back
+                        
+                        if(newindex<oldindex){
+                            op.stageName.addError('You are not authorized to come back opportunity Stage');
+                        }
+                        
+                    }
+                    
+    }
+    
+}
