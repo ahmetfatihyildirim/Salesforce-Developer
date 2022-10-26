@@ -1,42 +1,35 @@
 @isTest
-public class DescriptionChange_Test {
 
-
+public class TTDescriptionChange_Test {
     @isTest
-    public static void accDescChangeTest() {
 
-        //create mock data
+    public static void TTaccDescChangeTest() {
 
-        List<Account> acc=new List<Account>();
-
-        for(Integer i=0;i<5;i++){
-            Account a =new Account();
-            a.Name='Test '+i;
-            a.Phone='123'+i;
-            acc.add(a);
-        }
-        insert acc;
-
-        //Call the class
-        //Test.startTest();
-
-        DescriptionChange.accDescChange();
-
-        //System.assertEquals(1, Limits.getDmlStatements());
-
-        //Test.stopTest();
-
-        //Assess the results
-
-        List<Account> newAcc=[SELECT Description FROM Account];
-
-        for(Account a:newAcc){
-            system.assertEquals('Changed',a.Description);
-        }
-        system.assertEquals(2,Limits.getDmlStatements());
-        System.assertEquals(5,newAcc.size());
-
-
-    }
+    //create mock data
     
+    List<Account> accs = new List<Account>();
+    
+    for (Integer i = 1; i < 5; i++) {
+        Account a = new Account();
+        a.Name='Test'+i;
+        a.phone='123'+i;
+        accs.add(a);      
+    }
+    insert accs;
+    
+    
+    
+    //Call the code
+    TTDescriptionChange.TTaccDescChange();
+    
+    //Assess the results - assert methotds
+
+    List<Account> newAccs = [SELECT Description FROM Account];
+    
+    for (Account a : newAccs) {
+        System.assertEquals('Changed', a.Description);
+    }
+
+    System.assertEquals(4, newAccs.size());
+    }
 }

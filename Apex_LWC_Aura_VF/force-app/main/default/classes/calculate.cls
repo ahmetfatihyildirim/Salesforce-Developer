@@ -1,0 +1,23 @@
+public class calculate {
+    public Integer sum(Integer x, Integer y){
+        return x+y;
+    }
+    public Integer sub(Integer x, Integer y){
+        return x-y;
+    }
+    public Integer mul(Integer x, Integer y){
+        return x*y;
+    }
+    public Decimal div(Decimal x, Decimal y){
+        decimal result;
+        try{
+            result=x/y;
+        }catch(Exception e){
+            System.debug('Error '+e.getMessage());
+        }
+        
+        return result;
+    }
+    	
+
+}

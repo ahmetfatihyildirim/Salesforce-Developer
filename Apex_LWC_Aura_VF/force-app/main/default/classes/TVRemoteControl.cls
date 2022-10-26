@@ -9,16 +9,16 @@ public class TVRemoteControl {
         // Set initial value for volume
         volume = v;
     }
-        
-    public Integer increaseVolume(Integer amount) {
+    @TestVisible    
+    private Integer increaseVolume(Integer amount) {
         volume += amount;
         if (volume > MAX_VOLUME) {
             volume = MAX_VOLUME;
         } 
         return volume;
     }
-    @TestVisible
-    private Integer decreaseVolume(Integer amount) {
+    
+    public Integer decreaseVolume(Integer amount) {
         volume -= amount;
         if (volume < 0) {
             volume = 0;
