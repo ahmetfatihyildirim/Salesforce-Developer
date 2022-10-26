@@ -1,0 +1,20 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Calculation" icon-name="utility:advanced_function">
+        <lightning-button-icon  onclick={sum} icon-name="utility:add" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+        <lightning-button-icon  onclick={sub} icon-name="utility:dash" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+        <lightning-button-icon  onclick={mul} icon-name="utility:close" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+        <lightning-button-icon  onclick={div} icon-name="utility:radio_button" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+        <p class="slds-p-horizontal_small">
+            <lightning-input type="number" label="Enter First Number" name="NumX"
+            value={num1}
+            onchange={numberChangeHandler}
+            ></lightning-input>
+            <lightning-input type="number" label="Enter Second Number" name="NumY"
+            value={num2}
+            onchange={numberChangeHandler}
+            ></lightning-input>
+        </p>
+        <p slot="footer">Result : {result}</p>
+    </lightning-card>
+    
+</template>

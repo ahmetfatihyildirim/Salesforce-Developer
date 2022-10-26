@@ -1,0 +1,16 @@
+<template>
+  <lightning-card  variant="Narrow"  title="Hello" icon-name="standard:call_coaching">
+    <lightning-button-icon  icon-name="utility:down" variant="border-filled" 
+    alternative-text="Show More" slot="actions" onclick={messageSent}>
+    </lightning-button-icon>
+    <p class="slds-p-horizontal_small">
+        <lightning-input type="text" name="firstName" 
+        label="First Name " value={fullname.firstName} onchange={messageChangeHandler}>
+       </lightning-input>
+       <lightning-input type="text" name="lastName" 
+       label="Last Name " value={fullname.lastName} onchange={messageChangeHandler}>
+      </lightning-input>
+    </p>
+    <p slot="footer">{fullname.firstName} {fullname.lastName}</p>
+</lightning-card>
+</template>
