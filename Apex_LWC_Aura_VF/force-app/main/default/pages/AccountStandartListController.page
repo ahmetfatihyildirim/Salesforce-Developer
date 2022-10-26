@@ -1,0 +1,55 @@
+<apex:page standardController="Opportunity" recordSetVar="multiRecords"  >
+
+<apex:ListViews type="Case" />
+    
+     <apex:form >
+     
+     <apex:panelgrid columns="2">
+     
+             <apex:outputText >List View Afy</apex:outputText>
+     
+             <apex:selectList value="{!filterid}" size="1">
+     
+             <apex:actionSupport event="onchange" reRender="multi_table"/>
+             <apex:selectOptions value="{!listviewoptions}"> </apex:selectOptions>
+             <!-- <apex:commandButton Value="Go" action="{!list}"/> -->
+         
+             </apex:selectList>
+     
+     </apex:panelgrid>
+     
+     
+     
+     
+             <apex:pageBlock title="Opportunities" mode="inlineEdit">
+             
+             
+                 <apex:datalist value="{!multiRecords}" var="single" id="multi_table">
+                 
+                         <apex:pageblockSection columns="5">
+                                 <apex:inputField value="{!single.Name}"/>
+                                 <apex:inputField value="{!single.Accountid}"/>
+                                 <apex:inputField value="{!single.Amount}"/>
+                                 <apex:inputField value="{!single.StageName}"/>
+                                 <apex:inputField value="{!single.CloseDate}"/>
+                         </apex:pageblockSection>
+                         
+                 </apex:datalist>
+             
+                 <apex:pageblockButtons >
+                 
+                         <apex:commandButton value="⏮" action="{!first}"/>
+                         <apex:commandButton value="◀️" action="{!previous}"/>
+                         <apex:commandButton value="✔️" action="{!quicksave}"/>
+                         <apex:commandButton value="▶️" action="{!next}"/>
+                         <apex:commandButton value="⏭️" action="{!last}"/>
+                 
+                 
+                 </apex:pageblockButtons>
+             
+             
+             
+             </apex:pageBlock>
+     
+     </apex:form>
+</apex:page>

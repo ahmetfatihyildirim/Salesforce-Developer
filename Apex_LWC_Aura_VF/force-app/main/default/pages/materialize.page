@@ -1,0 +1,57 @@
+<apex:page standardStylesheets="false">
+     
+    <apex:stylesheet value="https://fonts.googleapis.com/icon?family=Material+Icons"/> 
+    <apex:stylesheet value="{!URLFOR($Resource.materialize, '/materialize/css/materialize.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.materialize, '/materialize/js/materialize.js')}"/>
+      
+   
+   
+<h1> hello </h1>
+
+ <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">ClarusWay</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+<div class="row">
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://clarusway.com/wp-content/uploads/2022/07/clarusway-logo-classic.jpg"/>
+          <span class="card-title">Card Title</span>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+   
+
+<ul id="dropdown2" class="dropdown-content">
+    <li><a href="#!">one<span class="badge">1</span></a></li>
+    <li><a href="#!">two<span class="new badge">1</span></a></li>
+    <li><a href="#!">three</a></li>
+  </ul>
+  <a class="btn dropdown-trigger" href="#!" data-target="dropdown2">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
+            
+
+
+<a class="waves-effect waves-light btn">button</a>
+<a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>button</a>
+<a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a>
+</apex:page>
