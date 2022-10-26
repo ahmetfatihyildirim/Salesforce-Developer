@@ -1,0 +1,22 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="numX" type="Decimal" />
+    <aura:attribute name="numY" type="Decimal" />
+    <aura:attribute name="result" type="Decimal" default="0"/>
+    
+    
+    
+    <ui:inputNumber label="First Num " aura:id="numberX" value="{!v.numX}" />
+    <ui:inputNumber label="Second Num " aura:id="numberY" value="{!v.numY}" />
+    
+    <ui:inputNumber label="Result " aura:id="resultData" value="{!v.result}" />
+    
+    <ui:button label="+" press="{!c.calculate}" class="button" />    
+    
+        <h1> NumX = {!v.numX} </h1>
+        <h1> NumY = {!v.numY} </h1>
+    
+        <h1> Result = {!v.result} </h1>
+    
+    
+</aura:component>

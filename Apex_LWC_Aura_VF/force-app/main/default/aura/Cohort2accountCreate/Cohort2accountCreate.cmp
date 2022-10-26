@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global"
+                controller="AccountUIHandler"
+                >
+    
+    <aura:attribute name="accName" type="String" />
+    <aura:attribute name="message" type="String" />
+    
+     <lightning:card variant="Narrow" title="Create Account" iconName="standard:account" footer="{!v.message}">
+        <aura:set attribute="actions">
+            <lightning:buttonIcon iconName="utility:save" variant="border-filled" alternativeText="Create Account"
+                                  onclick="{!c.createAcc}" />
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+           
+            <lightning:input name="acc_Name" label="Company Name" value="{!v.accName}"/>
+             
+        </p>
+    </lightning:card>
+    
+    
+</aura:component>

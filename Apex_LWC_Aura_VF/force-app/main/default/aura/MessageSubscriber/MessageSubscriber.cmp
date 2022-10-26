@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+
+<lightning:messageChannel type="mc__c" onMessage="{!c.handleChanged}" scope="APPLICATION" />
+
+
+<aura:attribute type="String" name="ReceivedMessage"  Default="No Message" />
+  <lightning:card footer="Subscriber" title="Message">
+   
+    <p class="slds-p-horizontal_small">
+        {!v.ReceivedMessage}
+    </p>
+</lightning:card>
+</aura:component>

@@ -1,0 +1,19 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<lightning:card variant="Narrow" title="AURA 1  " iconName="standard:account" footer="Card Footer">
+        <aura:set attribute="actions">
+            <lightning:buttonIcon iconName="utility:settings" variant="bare" onclick="{! c.handleClick }" alternativeText="Settings" title="Settings"/>
+        </aura:set>
+        <div class="row">
+            <h2 >Basic Input Text</h2>
+            <lightning:input name="input1" label="Enter some text" />
+            <lightning:input name="input2" label="Text field with predefined value" value="initial value"/>
+            <lightning:input name="input3" label="Text field with a placeholder" placeholder="type here..."/>
+    	</div>
+        <p class="newrow row">Hello Afy</p> <!--//burada class isminde 2 tane isim yazdık arada boşluk ile.
+        //.css dosyasında row a ait margini newrow a da uyguladı.-->
+        <div class="row">
+            <lightning:button variant="brand" label="Save" title="Save action" />
+        </div>
+        
+    </lightning:card>
+</aura:component>
