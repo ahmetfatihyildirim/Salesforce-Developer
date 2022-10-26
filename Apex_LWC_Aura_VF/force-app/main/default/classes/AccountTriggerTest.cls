@@ -14,7 +14,7 @@ public class AccountTriggerTest {
             multiAcc.add(oneAcc);
         }        
         insert multiAcc;
-        //System.debug(multiAcc.size());
+        System.debug(multiAcc.size());
     }
     
     
@@ -28,12 +28,13 @@ public class AccountTriggerTest {
     
      @isTest
     public static void updateName_multiAcc_2(){
-               
+        
+        
         //Test
         
         List<Account> resultAcc=[SELECT id, name, Phone FROM Account];
         
-        system.assertEquals(101, resultAcc.size());
+        system.assertEquals(101,resultAcc.size());
         
         Integer testNum=0;
         for(Account singleTestAcc:resultAcc){
@@ -42,7 +43,7 @@ public class AccountTriggerTest {
         }
         
     }
-    @isTest
+    
     public static void updateName_singleAcc_3(){
         //Prep Data
         Account singleAcc=new Account(name='test123');
