@@ -1,0 +1,19 @@
+<apex:page controller="createAccount" lightningStylesheets="true">
+	<apex:form >
+        <apex:pageblock >
+        <apex:pageBlockSection title="Account Creation" columns="1">
+            Account Name: <apex:inputText value="{!accName}" id="AccountName" html-placeholder="Account Name"/>    
+            Phone: <apex:inputText value="{!phone}" id="PhoneNumber" html-placeholder="Phone"/> 
+        </apex:pageBlockSection>
+            <br/>
+        <apex:pageBlockSection title="Contact Creation" columns="1">
+            First Name: <apex:inputText value="{!fname}" id="ContactFName" html-placeholder="First Name"/>
+            Last Name: <apex:inputText value="{!lname}" id="ContactLName" html-placeholder="Last Name"/>
+            <br/>
+        </apex:pageBlockSection>
+            <apex:commandButton value="Save" action="{!save}"/>
+            <apex:commandButton value="Refresh" action="{!refresh}"/>
+        
+    	</apex:pageblock>
+    </apex:form>
+</apex:page>
