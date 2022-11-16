@@ -1,0 +1,11 @@
+<template>
+    <lightning-card  title="Visible functions">
+        <div class="slds-m-around_medium">
+        <lightning-input type="checkbox" label="Show Details" onchange={changeHandler}></lightning-input>
+
+        <template if:true={areDetailsVisible}>
+            <p>This place is for details</p>
+        </template>
+    </div> 
+    </lightning-card>
+</template>

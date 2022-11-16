@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="CompositionIteration">
+        <div>
+            <template for:each={contacts} for:item="contact">
+                <p            class="slds-p-horizontal_small"
+                    key={contact.Id}
+                    contact={contact}
+                ></p>
+            </template>
+            
+        </div>
+
+        
+    </lightning-card>
+</template>

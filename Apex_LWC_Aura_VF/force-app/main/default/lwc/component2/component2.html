@@ -1,0 +1,18 @@
+<template>
+    <lightning-card  title="Body Mass Calculator" icon-name="utility:connected_apps">
+        <div class="slds-m-around_medium">
+            <lightning-input name="weight" type="text" label="Weight(Kg)" onchange={changeHandler1}></lightning-input>
+            <lightning-input name="height" type="text" label="Height(Meter)" onchange={changeHandler2}></lightning-input>
+
+        </div>
+        <div>
+            <lightning-button label="Calculate" onclick={buttonHandler}></lightning-button>
+        </div>
+        <div>
+            <p class="slds-p-horizontal_small">{result}</p>
+            <p class="slds-p-horizontal_small">{calculation}</p>
+            <p slot="footer">Card Footer</p>
+        </div>
+        
+    </lightning-card>
+</template>

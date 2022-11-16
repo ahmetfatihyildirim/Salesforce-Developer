@@ -1,0 +1,13 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Child" icon-name="standard:account">
+      <lightning-button-icon  icon-name="utility:anywhere_alert" variant="border-filled" 
+      onclick={sendMessageEvent}
+      alternative-text="Show More" slot="actions"></lightning-button-icon>
+      <p class="slds-p-horizontal_small">
+        <lightning-input type="text" label="Send message to Parent" value={messagetoSend}
+        onchange={messageChangeHandler}
+        ></lightning-input>
+      </p>
+      <p slot="footer">child</p>
+    </lightning-card>
+  </template>

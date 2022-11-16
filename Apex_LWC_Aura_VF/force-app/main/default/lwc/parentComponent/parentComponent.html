@@ -1,0 +1,10 @@
+<template>
+    <lightning-card  title="Parent Component">
+        <lightning-button label="New" slot="actions" onclick={clickHandle}></lightning-button>
+        <p class="slds-p-horizontal_small">Hello API Decorator Example</p>
+        <c-child-component parent-message={message}></c-child-component>
+        <!--lightning-input type="text" label="Write a message" value="{parentInput}"></lightning-input-->
+        
+        <p slot="footer">Parent Component</p>
+    </lightning-card>  
+</template>

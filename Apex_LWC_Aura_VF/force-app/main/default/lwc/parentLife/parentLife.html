@@ -1,0 +1,18 @@
+<template>
+  <lightning-card  variant="Narrow"  title="PARENT" icon-name="standard:account">
+   
+    <lightning-input type="toggle" label="Open/close Child Component" 
+    onchange={toggleChangeHandler} value={showChild}></lightning-input>
+    
+    
+    <p class="slds-p-horizontal_small">
+      <lightning-input type="text" value={dataforChild}
+      onchange={onvalueChangeHandler}></lightning-input>
+      <template if:true={showChild}>
+        <c-component-life title={dataforChild}></c-component-life>
+      </template>
+    </p>
+    <p slot="footer">Parent</p>
+  </lightning-card>
+    
+</template>

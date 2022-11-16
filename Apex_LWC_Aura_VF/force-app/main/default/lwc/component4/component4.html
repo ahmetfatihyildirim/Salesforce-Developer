@@ -1,0 +1,9 @@
+<template>
+    <lightning-card  title="Visible Function">
+        <lightning-input type="checkbox" label="Show the Details" onchange={changeHandler}></lightning-input>
+        
+        <template if:true={areDetailsVisible}>
+            <p>This is a detail Page</p>
+        </template>  
+    </lightning-card>
+</template>
